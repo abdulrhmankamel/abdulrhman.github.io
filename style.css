@@ -1,0 +1,286 @@
+/* General Styles */
+body {
+  background-color: #121212;
+  color: #eee;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 0;
+}
+
+#bg-video {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.section {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Navigation Menu */
+.menu {
+  display: flex;
+  list-style: none;
+  background-color: #222;
+  margin: 0;
+  padding: 1rem 2rem;
+  justify-content: center;
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.menu li a {
+  color: #eee;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.menu li a:hover {
+  color: #1db954;
+}
+
+/* Name and Typed Text */
+.name-tag {
+  text-align: center;
+  margin: 2rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.name-tag h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.3rem;
+  color: #1db954;
+}
+
+.name-tag p {
+  font-size: 1.5rem;
+  color: #ccc;
+}
+
+.typed-text {
+  color: #1db954;
+  font-weight: 600;
+}
+
+.cursor {
+  display: inline-block;
+  background-color: #1db954;
+  width: 2px;
+  margin-left: 3px;
+  animation: blink 0.7s steps(1) infinite;
+}
+
+@keyframes blink {
+  0%, 50% { background-color: #1db954; }
+  51%, 100% { background-color: transparent; }
+}
+
+/* Skills section wrapper: flex for left and right */
+.skills-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Skill boxes container */
+.skill-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 600px;
+}
+
+/* Each skill box styling */
+.skill-box {
+  background-color: #1db954;
+  color: #121212;
+  font-weight: 600;
+  padding: 8px 15px;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  user-select: none;
+  box-shadow: 0 0 8px #1db954aa;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: default;
+}
+
+.skill-box:hover {
+  background-color: #72e77a;
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #72e77aaa;
+}
+
+/* Box container for 3D carousel on right */
+.carousel3d-box {
+  width: 300px;
+  height: 300px;
+  border: 2px solid #1db954;
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: 0 0 15px #1db954;
+  background: #181818;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Carousel styles */
+.carousel3d {
+  width: 250px;
+  height: 250px;
+  perspective: 800px;
+  position: relative;
+}
+
+.carousel3d__container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  animation: rotate360 20s linear infinite;
+}
+
+.carousel3d__item {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: 50%;
+  left: 50%;
+  margin: -40px;
+  transition: transform 0.3s;
+}
+
+.carousel3d__item img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 3px #1db954);
+}
+
+.carousel3d__item:nth-child(1) { transform: rotateY(0deg) translateZ(150px); }
+.carousel3d__item:nth-child(2) { transform: rotateY(60deg) translateZ(150px); }
+.carousel3d__item:nth-child(3) { transform: rotateY(120deg) translateZ(150px); }
+.carousel3d__item:nth-child(4) { transform: rotateY(180deg) translateZ(150px); }
+.carousel3d__item:nth-child(5) { transform: rotateY(240deg) translateZ(150px); }
+.carousel3d__item:nth-child(6) { transform: rotateY(300deg) translateZ(150px); }
+
+@keyframes rotate360 {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project {
+  width: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 15px #1db954;
+  cursor: pointer;
+  position: relative;
+  background-color: #222;
+  transition: transform 0.3s ease;
+}
+
+.project video {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.project:hover video {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+}
+
+.project:hover {
+  transform: scale(1.05);
+}
+
+.project h3 {
+  color: #1db954;
+  text-align: center;
+  margin: 0.8rem 0 1rem 0;
+  font-weight: 600;
+}
+
+/* Contact Section */
+.contact-section {
+  background-color: #222;
+  padding: 3rem 2rem;
+  border-radius: 15px;
+  max-width: 600px;
+  margin: 3rem auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.contact-icons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.contact-icons a {
+  color: #1db954;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.contact-icons a:hover {
+  color: #72e77a;
+}
+
+.contact-icons i {
+  font-size: 1.4rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .skills-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .carousel3d-box {
+    width: 100%;
+    height: 280px;
+    margin-top: 1rem;
+  }
+
+  .projects-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
